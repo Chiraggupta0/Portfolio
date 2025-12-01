@@ -1,0 +1,408 @@
+/* Colors */
+:root {
+  --darkBg: #0f172a;
+  --lightBg: #1e293b;
+  --blue: #3b82f6;
+  --white: #f1f5f9;
+  --gray: #cbd5e1;
+}
+
+/* Basic Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--darkBg);
+  color: var(--white);
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Container */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--darkBg);
+  border-bottom: 1px solid var(--lightBg);
+  z-index: 1000;
+  padding: 1rem 0;
+}
+
+.navContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--blue);
+}
+
+.navMenu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.navMenu a {
+  color: var(--gray);
+  text-decoration: none;
+}
+
+.navMenu a:hover {
+  color: var(--blue);
+}
+
+.hamburgerBtn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--blue);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Sections */
+section {
+  padding: 4rem 0;
+  margin-top: 60px;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--blue);
+}
+
+/* Hero Section */
+.heroSection {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 0;
+}
+
+.heroContent h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  color: var(--gray);
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--gray);
+  margin-bottom: 2rem;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.btnPrimary,
+.btnSecondary {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--blue);
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btnPrimary {
+  background: var(--blue);
+  color: white;
+}
+
+.btnPrimary:hover {
+  background: #2563eb;
+}
+
+.btnSecondary {
+  background: transparent;
+  color: var(--blue);
+}
+
+.btnSecondary:hover {
+  background: var(--blue);
+  color: white;
+}
+
+/* About Section */
+.aboutSection {
+  background: var(--lightBg);
+}
+
+.aboutSection p {
+  font-size: 1.1rem;
+  color: var(--gray);
+}
+
+/* Skills Section */
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.skillCard {
+  background: var(--lightBg);
+  padding: 2rem;
+  border-radius: 0.3rem;
+}
+
+.skillCard h3 {
+  color: var(--blue);
+  margin-bottom: 1rem;
+}
+
+.skillCard p {
+  color: var(--gray);
+}
+
+/* Experience Section */
+.experienceSection {
+  background: var(--lightBg);
+}
+
+.expCard {
+  background: var(--darkBg);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.3rem;
+  border-left: 3px solid var(--blue);
+}
+
+.expCard h3 {
+  color: var(--blue);
+  margin-bottom: 0.5rem;
+}
+
+.date {
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.expCard p {
+  color: var(--gray);
+}
+
+/* Projects Section */
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.projectCard {
+  background: var(--lightBg);
+  padding: 2rem;
+  border-radius: 0.3rem;
+  border-top: 3px solid var(--blue);
+}
+
+.projectCard h3 {
+  color: var(--blue);
+  margin-bottom: 1rem;
+}
+
+.projectCard h3 a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.projectCard h3 a:hover {
+  text-decoration: underline;
+}
+
+.projectCard p {
+  color: var(--gray);
+  margin-bottom: 1rem;
+}
+
+.tags {
+  font-size: 0.85rem;
+  color: var(--blue);
+}
+
+/* Added Education Section */
+.educationSection {
+  background: var(--lightBg);
+}
+
+.eduCard {
+  background: var(--darkBg);
+  padding: 2rem;
+  border-radius: 0.3rem;
+  border-left: 3px solid var(--blue);
+}
+
+.eduCard p {
+  color: var(--gray);
+  margin-bottom: 1rem;
+}
+
+/* Added Certifications Section */
+.certificationsSection {
+  background: var(--lightBg);
+}
+
+.certCard {
+  background: var(--darkBg);
+  padding: 2rem;
+  border-radius: 0.3rem;
+  border-left: 3px solid var(--blue);
+}
+
+.certCard p {
+  color: var(--gray);
+  margin-bottom: 1rem;
+}
+
+/* Added profile image styling */
+.profileImg {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  border: 3px solid var(--blue);
+  object-fit: cover;
+}
+
+/* Contact Section */
+.contactSection {
+  background: var(--lightBg);
+  text-align: center;
+}
+
+.contactInfo {
+  font-size: 1.1rem;
+}
+
+.contactInfo p {
+  margin-bottom: 1rem;
+}
+
+.contactInfo a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.contactInfo a:hover {
+  text-decoration: underline;
+}
+
+.socialLinks {
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* Footer */
+.footer {
+  background: var(--darkBg);
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid var(--lightBg);
+  color: var(--gray);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .navMenu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--darkBg);
+    border-bottom: 1px solid var(--lightBg);
+    gap: 0;
+  }
+
+  .navMenu.active {
+    display: flex;
+  }
+
+  .navMenu li {
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--lightBg);
+  }
+
+  .hamburgerBtn {
+    display: block;
+  }
+
+  .heroContent h1 {
+    font-size: 2rem;
+  }
+
+  .skillsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .projectGrid {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 2rem 0;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent h1 {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .heroButtons {
+    flex-direction: column;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    width: 100%;
+  }
+}
