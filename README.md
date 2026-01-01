@@ -3,6 +3,7 @@
 This is my personal portfolio website showcasing my education, experience, skills, notable projects, and certifications.  
 The website is fully responsive and built from scratch using modern web development practices.
 
+https://portfolio-ecru-theta-lwtfdz6u5w.vercel.app/
 ---
 
 ## 🧑‍💻 About Me
