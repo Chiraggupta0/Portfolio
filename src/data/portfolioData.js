@@ -45,7 +45,18 @@ export const skills = [
 
 export const projects = [
   {
-    id: 1,
+  id: 1,
+  title: "Home4Paws",
+  subtitle: "Pet Adoption & Management Platform",
+  description:
+    "Full-stack web application connecting adopters with stray and rescued animals. Features include pet listings, adoption requests, user authentication, and admin moderation. Built with Spring Boot backend, React frontend, and RESTful APIs; deployed on AWS with scalable architecture.",
+  tech: ["Java", "Spring Boot", "React", "PostgreSQL", "AWS", "REST API", "Git"],
+  github: "https://github.com/Chiraggupta0/Home4Paws.git",
+  demo: "http://52.204.78.76",
+  featured: true,
+  },
+  {
+    id: 2,
     title: "NanoBase",
     subtitle: "Mini Database Engine",
     description:
@@ -56,7 +67,7 @@ export const projects = [
     featured: true,
   },
   {
-    id: 2,
+    id: 3,
     title: "Aarogya",
     subtitle: "Hospital Management System",
     description:
