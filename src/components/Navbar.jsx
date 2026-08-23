@@ -5,11 +5,12 @@ import { useActiveSection } from "../hooks/useActiveSection";
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },
+  { label: "Achievements", href: "#achievements" },
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
 ];
-const SECTION_IDS = ["hero", "about", "projects", "experience", "contact"];
+const SECTION_IDS = ["hero", "about", "achievements", "projects", "experience", "contact"];
 
 export default function Navbar({ dark, setDark }) {
   const [scrolled, setScrolled] = useState(false);
@@ -27,7 +28,7 @@ export default function Navbar({ dark, setDark }) {
       }`}>
       <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#hero" className="font-display text-xl text-ink-900 dark:text-ink-50 hover:text-amber-600 transition-colors">
-          {personal.name.split(" ")[0]}<span className="text-amber-600">.</span>
+          {personal.name}<span className="text-amber-600">.</span>
         </a>
         <div className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map(({ label, href }) => {

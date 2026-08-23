@@ -29,6 +29,15 @@ export default {
           dark: "#a6672f",
         },
       },
+      animation: {
+        "pulse-slow": "pulse-slow 4s ease-in-out infinite",
+      },
+      keyframes: {
+        "pulse-slow": {
+          "0%, 100%": { opacity: 0.5 },
+          "50%": { opacity: 0.9 },
+        },
+      },
     },
   },
   plugins: [],

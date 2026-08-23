@@ -6,9 +6,9 @@ export const personal = {
   role: "Java Backend Developer",
   tagline: "Building backend systems that actually work.",
   shortBio:
-    "MCA student specialising in AI & ML with a strong foundation in Core Java, JDBC, and database-driven application development. I enjoy designing clean architectures, writing structured code, and solving real problems — not just passing tests.",
+    "MCA student specialising in AI & ML with a strong backend focus — Spring Boot, distributed systems basics (Redis, SSE, message fan-out), and database-driven application design. I enjoy designing clean architectures, chasing down latency, and solving real problems — not just passing tests.",
   longBio:
-    "I'm currently pursuing my MCA in AI & ML from KR Mangalam University, Gurugram. My background spans backend development, data analysis, and Agile workflows. I've built projects from a mini database engine (yes, with a B-Tree and query parser) to a full hospital management system — the kind of work that deepens understanding rather than just demonstrating it.",
+    "I'm currently pursuing my MCA in AI & ML from KR Mangalam University, Gurugram (CGPA 9.08). My background spans backend development, multi-agent AI systems, and Agile workflows. I've built projects from a mini database engine with a hand-rolled B-Tree and query parser, to a multi-agent AI startup validation platform deployed for my college's incubation center, to a full-stack pet adoption platform with real-time chat and payments. I've also landed a merged pull request in hypersistence-utils, a production Hibernate/JPA utility library, and solved 400+ DSA problems on LeetCode and GFG.",
   email: "chiraggupta0963@gmail.com",
   phone: "+91-9927274277",
   location: "Gurugram, India",
@@ -23,59 +23,79 @@ export const personal = {
 export const skills = [
   {
     category: "Languages",
-    items: ["Java", "SQL", "C", "C++"],
+    items: ["Java", "SQL"],
   },
   {
-    category: "Backend & DB",
-    items: ["JDBC", "MySQL", "OOP", "Query Optimisation"],
+    category: "Backend",
+    items: ["Spring Boot", "Spring Data JPA", "Hibernate", "REST APIs", "JWT", "OAuth 2.0", "Microservices"],
   },
   {
-    category: "Dev Tools",
-    items: ["Git", "GitHub", "IntelliJ IDEA", "Jira"],
+    category: "Data Stores",
+    items: ["PostgreSQL", "Supabase", "DBeaver", "Redis (caching, Pub/Sub)"],
   },
   {
-    category: "Concepts",
-    items: ["Data Structures & Algorithms", "Agile / Scrum", "Debugging", "System Design Basics"],
+    category: "Infrastructure",
+    items: ["Docker", "AWS (EC2, Elastic IP)", "n8n (Multi-Agent Orchestration)", "GitHub Actions (CI/CD)", "Git", "Maven", "Postman"],
   },
   {
-    category: "Analytics & Cloud",
-    items: ["Power BI", "Excel", "AWS Cloud Foundations"],
+    category: "Systems",
+    items: ["DBMS", "Data Structures & Algorithms", "OOP", "Operating Systems", "Agile"],
   },
 ];
 
 export const projects = [
   {
-  id: 1,
-  title: "Home4Paws",
-  subtitle: "Pet Adoption & Management Platform",
-  description:
-    "Full-stack web application connecting adopters with stray and rescued animals. Features include pet listings, adoption requests, user authentication, and admin moderation. Built with Spring Boot backend, React frontend, and RESTful APIs; deployed on AWS with scalable architecture.",
-  tech: ["Java", "Spring Boot", "React", "PostgreSQL", "AWS", "REST API", "Git"],
-  github: "https://github.com/Chiraggupta0/Home4Paws.git",
-  demo: "http://52.204.78.76",
-  featured: true,
+    id: 1,
+    title: "SIVP",
+    subtitle: "Multi-Agent AI Startup Validation Platform",
+    description:
+      "Multi-agent AI platform that validates startup ideas, deployed internally for the college's incubation center (KEIC) for mentor-review workflows. Parallelized the 7-agent analysis stage to cut pipeline runtime by 75% (4min → 1min), added request-level content-hash caching for near-instant duplicate responses, a pre-flight validation gate rejecting invalid ideas in under 5 seconds, and circuit-breaker-style fault isolation for 100% pipeline uptime under partial failures.",
+    tech: ["Java", "Spring Boot", "React.js", "Supabase (PostgreSQL)", "n8n", "Google Gemini", "REST APIs", "OAuth 2.0", "Docker", "AWS", "GitHub Actions"],
+    github: "https://github.com/Chiraggupta0/Idea-Validation",
+    demo: "https://sivp.space",
+    featured: true,
   },
   {
     id: 2,
-    title: "NanoBase",
-    subtitle: "Mini Database Engine",
+    title: "Home4Paws",
+    subtitle: "Dog Adoption Platform",
     description:
-      "Engineered a database engine from scratch in Core Java. Implements a B-Tree index, a custom Tokenizer, a Recursive Query Parser, and a Query Executor across a clean 5-layer architecture. File-persistent storage via Java I/O reduces primary key lookup time by 60% vs linear scanning.",
-    tech: ["Core Java", "B-Tree", "File I/O", "Serialisation"],
-    github: "https://github.com/Chiraggupta0/NanoBase.git",
-    demo: null,
+      "Spring Boot backend with 12 entities across 8 REST controllers (~40 endpoints) covering pet adoption, e-commerce checkout, subscriptions, and real-time chat in one unified API layer. Built a custom JWT validation filter decoupling Supabase authentication from a separate role-based Postgres authorization store, real-time chat via SSE + Redis Pub/Sub for cross-instance message fan-out, and unified Razorpay payments across one-time orders and recurring subscriptions.",
+    tech: ["Java", "Spring Boot", "React.js", "PostgreSQL", "Redis", "REST APIs", "JWT", "OAuth 2.0", "Spring Security", "JPA/Hibernate", "Server-Sent Events", "Razorpay", "Docker", "Nginx", "AWS EC2"],
+    github: "https://github.com/Chiraggupta0/Home4Paws.git",
+    demo: "https://home4paws.in/",
     featured: true,
   },
   {
     id: 3,
-    title: "Aarogya",
-    subtitle: "Hospital Management System",
+    title: "NanoBase",
+    subtitle: "Mini Database Engine",
     description:
-      "Java-based HMS with three core modules — Patients, Doctors, and Appointments — with full CRUD via JDBC and MySQL. Relational schema uses PK/FK constraints; credentials secured via environment variables; version-controlled with Git.",
-    tech: ["Java", "MySQL", "JDBC", "Git"],
-    github: "https://github.com/Chiraggupta0/Aarogya.git",
-    demo: null,
+      "Database engine built from scratch in Core Java. Rearchitected the write path to eliminate O(n²) I/O amplification, cutting bulk-write time from 210s to 13s (16x) on 12,000-record workloads, and fixed query planning to route indexed lookups through the index instead of full table scans (2.4ms → 0.01ms, 220x) at 20K+ records. Crash-safe persistence via atomic commits and replayable write-ahead logs, verified with live process-kill fault injection; fine-grained locking validated under 16,000+ concurrent writes with zero race conditions.",
+    tech: ["Core Java", "B-Tree", "File I/O", "Serialisation", "SQL Parser", "Lexer", "Recursive Descent Parsing"],
+    github: "https://github.com/Chiraggupta0/NanoBase.git",
+    demo: "https://drive.google.com/file/d/1sBNLiSVsR_KX40DsGw7_BUXk3eFP_QM9/view?usp=sharing",
+    demoLabel: "Demo Video",
     featured: true,
+  },
+];
+
+export const achievements = [
+  {
+    id: 1,
+    title: "hypersistence-utils",
+    detail:
+      "Contributed a merged pull request (PR #859) to an open-source Hibernate/JPA utility library used across production Java projects.",
+    link: "https://github.com/vladmihalcea/hypersistence-utils/pull/859",
+  },
+  {
+    id: 2,
+    title: "400+ DSA Problems",
+    detail: "Solved 400+ Data Structures & Algorithms problems on LeetCode and GeeksforGeeks.",
+    links: [
+      { label: "LeetCode", url: "https://leetcode.com/u/chirag_gupta_/" },
+      { label: "GeeksforGeeks", url: "https://www.geeksforgeeks.org/profile/chirag_gupta_?tab=activity" },
+    ],
   },
 ];
 
@@ -87,22 +107,19 @@ export const experience = [
     company: "Edulyt India",
     period: "Jun 2024 – Aug 2024",
     bullets: [
-      "Analysed 100,000+ financial records for credit risk assessment and reporting.",
-      "Improved risk identification accuracy by 15% and cut reporting errors by 20%.",
-      "Prepared 10+ dashboards for non-technical stakeholders.",
-      "Worked in Agile (Scrum) — sprint planning, daily stand-ups, retrospectives.",
+      "Analysed 100,000+ financial records for credit risk assessment, performing end-to-end data mapping across 3+ source systems.",
+      "Validated and cleaned datasets using SQL queries, resolving 20%+ data quality issues across 6+ Agile sprint cycles.",
     ],
   },
   {
     id: 2,
     type: "work",
-    role: "Data Analyst Intern",
+    role: "Data Science Intern",
     company: "Coratia Technologies",
     period: "Oct 2023 – Dec 2023",
     bullets: [
-      "Analysed 5+ structured datasets across business use cases.",
-      "Improved data preprocessing efficiency by 25%.",
-      "Contributed to iterative development using Agile methodologies.",
+      "Prepared, cleaned, and validated 10,000+ records across 4+ data sources.",
+      "Performed EDA on large datasets, uncovering and resolving 500+ data quality issues and reducing downstream errors by 40%.",
     ],
   },
   {
@@ -111,14 +128,14 @@ export const experience = [
     role: "MCA — AI & ML",
     company: "KR Mangalam University",
     period: "2025 – 2027",
-    bullets: ["CGPA: 8.56 (ongoing)"],
+    bullets: ["CGPA: 9.08 (ongoing)"],
   },
   {
     id: 4,
     type: "education",
-    role: "BCA — Data Analytics",
+    role: "BCA",
     company: "Institute of Management Studies (UCC)",
     period: "2022 – 2025",
-    bullets: ["GPA: 76.5%"],
+    bullets: [],
   },
 ];

@@ -26,6 +26,7 @@ export default function Projects() {
           {projects.map((project, i) => (
             <motion.div
               key={project.id}
+              className={i === 0 ? "md:col-span-2" : ""}
               initial={{ opacity: 0, y: 28 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{
